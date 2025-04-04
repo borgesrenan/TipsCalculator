@@ -1,212 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8FFF8">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearMainContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="24dp">
-
-        <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Tipsy"
-            android:textColor="#2E7D32"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Enter bill total"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edt_text_bill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:hint="€0.00"
-            android:inputType="numberDecimal"
-            android:maxLength="8"
-            android:textColor="#2E7D32"
-            android:textSize="30sp" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Choose tip"
-            android:textSize="16sp" />
-
-        <GridLayout
-            android:id="@+id/gridTip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:alignmentMode="alignMargins"
-            android:columnCount="3"
-            android:rowCount="2"
-            android:useDefaultMargins="true">
-
-            <Button
-                android:id="@+id/btnTip10"
-                android:text="10%" />
-
-            <Button
-                android:id="@+id/btnTip15"
-                android:text="15%" />
-
-            <Button
-                android:id="@+id/btnTip20"
-                android:text="20%" />
-
-        </GridLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Split"
-            android:textSize="16sp" />
+        app:layout_constraintBottom_toTopOf="@id/btn_calcAgain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="–"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textPeopleCount"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="3"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btnPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <!-- Resultado -->
-        <LinearLayout
-            android:id="@+id/resultBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
-            android:background="#E0F2F1"
-            android:elevation="4dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textTotalPerPerson"
+                android:id="@+id/app_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="Total per person"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textAmountPerPerson"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:text="$45.05"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/pacifico_regular"
+                android:text="Tipsy"
                 android:textColor="#2E7D32"
-                android:textSize="32sp"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Enter bill total"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_text_bill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:hint="€0.00"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:textColor="#2E7D32"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="Choose tip"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/gridTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:alignmentMode="alignMargins"
+                android:columnCount="4"
+                android:rowCount="2"
+                android:useDefaultMargins="true">
+
+                <android.widget.Button
+                    android:id="@+id/btnTip10"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_button"
+                    android:elevation="4dp"
+                    android:text="10%"
+                    android:textStyle="bold" />
+
+                <android.widget.Button
+                    android:id="@+id/btnTip15"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_button"
+                    android:elevation="4dp"
+                    android:text="15%"
+                    android:textStyle="bold" />
+
+                <android.widget.Button
+                    android:id="@+id/btnTip20"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_button"
+                    android:elevation="4dp"
+                    android:text="20%"
+                    android:textStyle="bold" />
+
+                <android.widget.Button
+                    android:id="@+id/btnTip25"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_button"
+                    android:elevation="4dp"
+                    android:text="25%"
+                    android:textStyle="bold" />
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="Split"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginBottom="2dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-
-                <TextView
-                    android:id="@+id/textBillDetails"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="bill"
-                    android:textSize="18sp" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <android.widget.Button
+
+                        android:id="@+id/btnMinus"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_button"
+                        android:elevation="4dp"
+                        android:text="–"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textPeopleCount"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="3"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <android.widget.Button
+                        android:id="@+id/btnPlus"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_button"
+                        android:elevation="4dp"
+                        android:text="+"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <TextView
+                    android:id="@+id/txt_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="tip"
-                    android:textSize="18sp" />
-
+                    android:layout_marginTop="4dp"
+                    android:text="Max 5"
+                    android:textColor="#FF0000"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
+
+            <!-- Resultado -->
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:id="@+id/resultBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/result_gradient"
+                android:elevation="7dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/txt_bill_value"
+                    android:id="@+id/textTotalPerPerson"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:textStyle="bold"
-                    android:textColor="#2E7D32"
-
-                    android:text="€ 37.54"
-                    android:textSize="20sp" />
+                    android:layout_marginBottom="4dp"
+                    android:text="Total per person"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_tip_value"
+                    android:id="@+id/textAmountPerPerson"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:text="€ 45.05"
                     android:textColor="#2E7D32"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
 
-                    android:text="€ 8.90"
-                    android:textSize="20sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/textBillDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="bill"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="tip"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_bill_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="€ 37.54"
+                        android:textColor="#2E7D32"
+
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_tip_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="€ 8.90"
+                        android:textColor="#2E7D32"
+
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
             </LinearLayout>
-
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_calcAgain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
     </LinearLayout>
-</ScrollView>
+
+
+    <android.widget.Button
+        android:id="@+id/btn_calcAgain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_button"
+        android:elevation="4dp"
+        android:paddingVertical="10dp"
+        android:text="RESET"
+        android:textColor="#2E7D32"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
