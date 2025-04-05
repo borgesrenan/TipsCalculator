@@ -53,7 +53,7 @@
                 android:inputType="numberDecimal"
                 android:maxLength="8"
                 android:textColor="#2E7D32"
-                android:textSize="30sp" />
+                android:textSize="35sp" />
 
 
             <TextView
@@ -136,8 +136,8 @@
                     <android.widget.Button
 
                         android:id="@+id/btnMinus"
-                        android:layout_width="60dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/custom_button"
                         android:elevation="4dp"
                         android:text="–"
@@ -156,8 +156,8 @@
 
                     <android.widget.Button
                         android:id="@+id/btnPlus"
-                        android:layout_width="60dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
                         android:background="@drawable/custom_button"
                         android:elevation="4dp"
                         android:text="+"
@@ -176,6 +176,9 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
             <!-- Resultado -->
 
@@ -191,6 +194,7 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="16dp">
+
 
                 <TextView
                     android:id="@+id/textTotalPerPerson"
@@ -236,6 +240,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -248,10 +253,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="2dp"
                         android:text="€ 37.54"
                         android:textColor="#2E7D32"
-
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -260,7 +264,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="2dp"
                         android:text="€ 8.90"
                         android:textColor="#2E7D32"
 
@@ -269,6 +273,10 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                />
         </LinearLayout>
 
     </LinearLayout>
